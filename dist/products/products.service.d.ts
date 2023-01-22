@@ -30,6 +30,7 @@ export declare class ProductsService {
     constructor(ProductModel: Model<ProductDocument>);
     create(createProductDto: CreateProductDto): Promise<Product>;
     findAll(): Promise<Product[]>;
+    findOne(id: string): Promise<Product>;
     delete(id: string): Promise<import("mongoose").Document<unknown, any, Product> & Product & {
         _id: import("mongoose").Types.ObjectId;
     } & Required<{

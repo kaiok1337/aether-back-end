@@ -17,6 +17,13 @@ export class ProductsService {
     return this.ProductModel.find().exec();
   }
 
+  async findOne(id: string): Promise<Product> {
+    const foundProduct = await this.ProductModel
+        .findById({_id: id})
+        .exec();
+    return foundProduct;
+  }
+
   async delete(id: string) {
     const deletedProduct = await this.ProductModel
         .findByIdAndRemove({ _id: id })

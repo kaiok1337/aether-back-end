@@ -17,6 +17,11 @@ export class ProductsController {
     return this.productsService.findAll();
   }
 
+  @Get(':id')
+  async findOne(@Param('id') id: string): Promise<Product> {
+    return this.productsService.findOne(id)
+  }
+
   @Delete(':id')
   async delete(@Param('id') id: string) {
     return this.productsService.delete(id);

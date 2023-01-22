@@ -28,6 +28,12 @@ let ProductsService = class ProductsService {
     async findAll() {
         return this.ProductModel.find().exec();
     }
+    async findOne(id) {
+        const foundProduct = await this.ProductModel
+            .findById({ _id: id })
+            .exec();
+        return foundProduct;
+    }
     async delete(id) {
         const deletedProduct = await this.ProductModel
             .findByIdAndRemove({ _id: id })

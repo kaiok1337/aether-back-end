@@ -26,6 +26,9 @@ let ProductsController = class ProductsController {
     async findAll() {
         return this.productsService.findAll();
     }
+    async findOne(id) {
+        return this.productsService.findOne(id);
+    }
     async delete(id) {
         return this.productsService.delete(id);
     }
@@ -43,6 +46,13 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], ProductsController.prototype, "findAll", null);
+__decorate([
+    (0, common_1.Get)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], ProductsController.prototype, "findOne", null);
 __decorate([
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),

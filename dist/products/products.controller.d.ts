@@ -31,6 +31,7 @@ export declare class ProductsController {
     constructor(productsService: ProductsService);
     create(createProductDto: CreateProductDto): Promise<void>;
     findAll(): Promise<Product[]>;
+    findOne(id: string): Promise<Product>;
     delete(id: string): Promise<import("mongoose").Document<unknown, any, Product> & Product & {
         _id: import("mongoose").Types.ObjectId;
     } & Required<{
