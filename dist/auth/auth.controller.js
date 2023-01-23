@@ -29,7 +29,7 @@ let AuthController = class AuthController {
     }
     async register(createUserDTO) {
         const user = await this.userService.addUser(createUserDTO);
-        return user;
+        return this.authService.login(user);
     }
     async login(req) {
         return this.authService.login(req.user);

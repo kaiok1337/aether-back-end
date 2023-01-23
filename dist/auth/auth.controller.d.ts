@@ -5,7 +5,9 @@ export declare class AuthController {
     private authService;
     private userService;
     constructor(authService: AuthService, userService: UserService);
-    register(createUserDTO: CreateUserDTO): Promise<import("../user/schemas/user.schema").User>;
+    register(createUserDTO: CreateUserDTO): Promise<{
+        token: string;
+    }>;
     login(req: any): Promise<{
         token: string;
     }>;
