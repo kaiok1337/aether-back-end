@@ -7,6 +7,7 @@ export class CreateProductDto {
     medQuantity: number;
     lrgQuantity: number;
     imgUrl: string;
+    description: string;
     type: string;
 
   }

@@ -24,6 +24,9 @@ export class Product {
   imgUrl: string;
 
   @Prop()
+  description: string;
+
+  @Prop()
   type: string;
 
 }
